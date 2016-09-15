@@ -1,1 +1,1 @@
-# Java-Assignments
+**Duke University Java Course Assignments**
