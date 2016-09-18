@@ -7,3 +7,31 @@
 //then that same pixel in the inverted image would have the red, blue and green values of (221, 57, 15). 
 //Note that 255 - 34 is 221, 255 - 198 is 57, and 255 - 240 is 15.
 
+import edu.duke.*;
+import java.io.*;
+public class imageInversions {
+    public ImageResource makeInversion(ImageResource inImage) {
+        ImageResource outImage = new ImageResource(inImage.getWidth(), inImage.getHeight());
+        for (Pixel pixel: outImage.pixels()) {
+            Pixel inPixel = inImage.getPixel(pixel.getX(), pixel.getY());
+            Pixel outPixelRed = outPixelRed.setRed(255 - inImage.getRed());
+            Pixel outPixelBlue = outPixeBlue.setBlue(255 - inImage.getBlue());
+            Pixel outPixelGreen = outPixelGreen.setGreen(255 - inImage.getGreen());
+        }
+        return outImage;
+    }
+    
+    public void selectAndConvert() {
+        DirectoryResource dr = new DirectoryResource();
+        for (File f: dr.selectedFiles()){
+        ImageResource image = new ImageResource(f);
+        ImageResource invertImage = makeInversion(f);
+        String fileName = image.getFileName();
+        String newFileName = "invert-" + fileName;
+        invertImage.setFileName(newFileName);
+        invertImage.draw();
+        invertImage.save();
+    }
+}
+}
+
