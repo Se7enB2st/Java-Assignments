@@ -16,11 +16,11 @@ public class BatchInversions {
         for (Pixel pixel: outImage.pixels()) {
             
             Pixel inPixel = inImage.getPixel(pixel.getX(), pixel.getY());
-            
+            //Invert image pixels
             int invRed = 255 - inPixel.getRed();
             int invGreen = 255 - inPixel.getGreen();
             int invBlue = 255 - inPixel.getBlue();
-            
+            //Set new pixels 
             pixel.setRed(invRed);
             pixel.setGreen(invGreen);
             pixel.setBlue(invBlue);
