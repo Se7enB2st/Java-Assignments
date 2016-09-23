@@ -26,20 +26,23 @@ public class BlockTower
 {
     public static void main(String[] args)
     {
+        //Create Rectangles
         Rectangle boxBottom1 = new Rectangle(20,70,40,30);
         Rectangle boxBottom2 = new Rectangle(60,70,40,30);
         Rectangle boxBottom3 = new Rectangle(100,70,40,30);
         Rectangle boxMiddle1 = new Rectangle(40,40,40,30);
         Rectangle boxMiddle2 = new Rectangle(80,40,40,30);
         Rectangle boxTop = new Rectangle(60,10,40,30);
-
+        
+        //Set the colors
         boxBottom1.setColor(Color.BLUE);
         boxBottom2.setColor(Color.MAGENTA);
         boxBottom3.setColor(Color.CYAN);
         boxMiddle1.setColor(Color.RED);
         boxMiddle2.setColor(Color.PINK);
         boxTop.setColor(new Color(125, 125, 255));
-
+        
+        //Fill in the colors
         boxBottom1.fill();
         boxBottom2.fill();
         boxBottom3.fill();
