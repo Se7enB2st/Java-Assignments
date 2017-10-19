@@ -1,4 +1,4 @@
-class Game {
+public class Game {
   public static final int MAX_MISSES = 7;
   private String answer;
   private String hits;
@@ -8,6 +8,10 @@ class Game {
     this.answer = answer.toLowerCase();
     hits = "";
     misses = "";
+  }
+  
+  public String getAnswer() {
+    return answer;
   }
   
   private char normalizeGuess(char letter) {
@@ -53,5 +57,9 @@ class Game {
       progress += display;
     }
     return progress;
-  } 
+  }
+  
+  public boolean isWon(){
+    return getCurrentProgress().indexOf('-') == -1;
+  }
 }
