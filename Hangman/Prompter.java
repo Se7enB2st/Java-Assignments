@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Prompter {
+public class Prompter {
   private Game game;
   
   public Prompter(Game game) {
@@ -30,6 +30,16 @@ class Prompter {
   public void displayProgress() {
     System.out.printf("You have %d tries left to solve:  %s%n",
                       game.getRemainingTries(),
-                      game.getCurrentProgress());  
-  } 
+                      game.getCurrentProgress());
+    
+  }
+  
+  public void displayOutcome(){
+    if(game.isWon()) {
+      System.out.printf("Congratulation on winning the game with %d tries left.%n",
+                       game.getRemainingTries());
+    } else {
+      System.out.printf("Sorry, the answer is %s.%n", game.getAnswer());
+    }
+  }
 }
